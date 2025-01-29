@@ -24,7 +24,7 @@ const InitialUpload = ({ pdfId, onFileUpload }: props): JSX.Element => {
       return;
     }
     try {
-      fetch(`http://localhost:8081/getPdf/${pdfId}`)
+      fetch(`https://buildco-backend.onrender.com/getPdf/${pdfId}`)
       .then(res => res.blob())
       .then(res => {
         if(res.size === 0)

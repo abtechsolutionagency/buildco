@@ -72,7 +72,7 @@ const Homepage = (): JSX.Element => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`http://localhost:8081/getData/${pdfId}`)
+      const res = await fetch(`https://buildco-backend.onrender.com/getData/${pdfId}`)
       const data = await res.json();
       setScaleInfo(data.scaleInfo)
       setPolygon(data.polygon)
@@ -172,7 +172,7 @@ const Homepage = (): JSX.Element => {
   };
 
   const onSaveDetails = async () => {
-    const res = await fetch('http://localhost:8081/saveData', {
+    const res = await fetch('https://buildco-backend.onrender.com/saveData', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -196,7 +196,7 @@ const Homepage = (): JSX.Element => {
 
     formData.append('file', uploadedFiles.current[0], id);
 
-    xhr.open("POST", "http://localhost:8081/post_pdf", true);
+    xhr.open("POST", "https://buildco-backend.onrender.com/post_pdf", true);
 
     xhr.onreadystatechange = function () {  
         if (xhr.readyState === 4) {  
